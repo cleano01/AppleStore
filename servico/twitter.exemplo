@@ -1,0 +1,19 @@
+
+
+class Twitter:
+
+    def __init__(self):
+        pass
+
+    def retorna_credenciais(self):
+        #Complete aqui com o valor da "access_token" gerada para você
+        access_token = ""
+        #Complete aqui com o valor da "access_token_secret" gerada para você
+        access_token_secret = ""
+        #Complete aqui com o valor da "consumer_key" gerada para você
+        consumer_key = ""
+        #Complete aqui com o valor da "consumer_secret" gerada para você
+        consumer_secret = ""
+        
+        return {'access_token': access_token, 'access_token_secret': access_token_secret, 
+        'consumer_key':consumer_key, 'consumer_secret':consumer_secret}

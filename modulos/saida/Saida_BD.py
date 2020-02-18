@@ -12,20 +12,19 @@ class Saida_BD (Resource):
         self.avaliacoes = Avaliacao()
         self.generos = Genero()
     
-       
    
-    def get(self):
+    def get(self):        
         try:
             self.criar_tabela()
             self.insere_ctg_new()
             self.insere_top_10()
             return {'status':'sucesso' }
+        
         except Exception as e:
             return {'Error': f'Não foi possivél inserir dados no BD {e}'}
 
 
     def insere_ctg_new(self):
-        
         try:
             track_name = self.avaliacoes.get()['track_name']
             n_citacoes= self.avaliacoes.get()['rating_count_tot']
@@ -40,15 +39,13 @@ class Saida_BD (Resource):
             print(f'Error : insere_ctg_new {e}')
 
 
-    def insere_top_10(self):
-        
+    def insere_top_10(self):        
         for i in self.generos.get():
             self.inserir_dados_bd(i[0], i[1], 
             i[2], i[3], i[4])
     
             
-    def criar_tabela(self):
-        
+    def criar_tabela(self):        
         try:
             self.cursor.execute("""
             CREATE TABLE IF NOT EXISTS dados (
@@ -66,8 +63,7 @@ class Saida_BD (Resource):
             print(f'Erro : criar_tabela {e}')
        
          
-    def inserir_dados_bd(self,*args):
-        
+    def inserir_dados_bd(self,*args):        
         try:   
             curso = self.conn.cursor()
          
