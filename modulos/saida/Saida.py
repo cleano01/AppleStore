@@ -12,17 +12,15 @@ class Saida (Resource):
         self.avaliacoes = Avaliacao()
         self.generos = Genero()
     
+    
     def get(self):
-        
         try:
             self.criar_tabela()
             self.insere_ctg_new()
             self.insere_top_10()
             return {'status':'sucesso' }
-        
         except Exception as e:
-            return {'Error': 'error ao inserir dados no BD'}
-       
+            return {'Error': f'Não foi possivél inserir dados no BD {e}'}
 
 
     def insere_ctg_new(self):

@@ -6,10 +6,15 @@ class Genero(Resource):
         self.df = pd.read_csv("ultis/AppleStore.csv")
         self.lista_top=[] 
 
+
     def get(self):
-        self.top10_app_catg_book()
-        self.top10_app_catg_music()
-        return self.lista_top
+        try:
+            self.top10_app_catg_book()
+            self.top10_app_catg_music()
+            return self.lista_top
+        except Exception as e:
+            return {'Error' : f'Não possilvél retornar a lista dos tops 10 {e}'}
+            
 
     def top10_app_catg_book(self):
         try:

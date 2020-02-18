@@ -1,12 +1,19 @@
 import pandas as pd
 from flask_restful import Resource
+
 class Avaliacao(Resource):
     def __init__(self):
         self.df = pd.read_csv("ultis/AppleStore.csv")
     
+
     def get(self):
-        return self.maior_app_catg_news()
-        
+        try:
+            return self.maior_app_catg_news()
+
+        except Exception as e:
+            return {'Error': f'Não foi possivél retornar o App {e}'}
+
+
     def maior_app_catg_news (self):
         try:
             nome_app_linha = self.df[self.df['prime_genre'] == 'News']\
