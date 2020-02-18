@@ -4,7 +4,7 @@ from flask_restful import Resource
 from modulos.avaliacao.Avaliacao import Avaliacao
 from modulos.genero.Genero import Genero
 
-class Saida (Resource):
+class Saida_BD (Resource):
 
     def __init__(self):
         self.conn = sqlite3.connect('base.bd')
@@ -12,7 +12,8 @@ class Saida (Resource):
         self.avaliacoes = Avaliacao()
         self.generos = Genero()
     
-    
+       
+   
     def get(self):
         try:
             self.criar_tabela()
@@ -83,6 +84,16 @@ class Saida (Resource):
         
         except Exception as e:
             print(f'Erro :  inserir_dados_ctg_new {e}')
+
+
+     
+
+
+
+
+
+
+        
             
        
     
