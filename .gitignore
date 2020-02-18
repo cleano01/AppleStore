@@ -1,3 +1,5 @@
 .vscode/
 base.bd
 servico/twitter.py
+__pycache__/
+AppleStore.csv

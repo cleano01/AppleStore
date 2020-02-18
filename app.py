@@ -11,7 +11,9 @@ from modulos.citacao.Citacao import Citacao
 app = Flask(__name__)
 api = Api(app)
 
+#me retorna o app com maior avaliações com a categoria news
 api.add_resource(Avaliacao, '/news')
+#me retorna os 10 maior app com as categorias book e music
 api.add_resource(Genero, '/genero')
 api.add_resource(Saida_BD, '/insere/bd')
 api.add_resource(Saida_CSV, '/criar/csv')

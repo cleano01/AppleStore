@@ -36,7 +36,7 @@ class Genero(Resource):
             return self.lista_top
 
         except Exception as e:
-            print(f'Error : top10_app_catg_Book {e}')
+            print(f'Error : Error na função top10_app_catg_Book {e}')
         
 
     def top10_app_catg_music(self):
@@ -59,7 +59,7 @@ class Genero(Resource):
             return self.lista_top
         
         except Exception as e:
-            print(f'Error : top10_app_catg_Music {e}')
+            print(f'Error : Erro na função top10_app_catg_Music {e}')
         
 
 
