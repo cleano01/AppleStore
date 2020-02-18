@@ -12,6 +12,7 @@ class Genero(Resource):
             self.top10_app_catg_book()
             self.top10_app_catg_music()
             return self.lista_top
+
         except Exception as e:
             return {'Error' : f'Não possilvél retornar a lista dos tops 10 {e}'}
             
@@ -35,10 +36,11 @@ class Genero(Resource):
             return self.lista_top
 
         except Exception as e:
-            print(f'Error : top10_app_catg_Book {e}')
+            print(f'Error : Error na função top10_app_catg_Book {e}')
         
 
     def top10_app_catg_music(self):
+
         try:
             lista_app_linha = self.df[self.df['prime_genre'] == 'Music']\
             .sort_values('rating_count_tot', ascending=False).head(10)
@@ -57,15 +59,10 @@ class Genero(Resource):
             return self.lista_top
         
         except Exception as e:
-            print(f'Error : top10_app_catg_Music {e}')
+            print(f'Error : Erro na função top10_app_catg_Music {e}')
         
 
-#a = Genero()
-#print (a.top10_app_catg_book())
-        
-#print("###")
 
-#print(a.top10_app_catg_music())
 
 
 
