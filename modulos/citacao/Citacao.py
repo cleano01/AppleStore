@@ -18,11 +18,15 @@ class Citacao(Resource):
         return self.listar_citacao()
 
     def listar_citacao(self):
+        try:
+            resposta = self.cursor.execute('SELECT track_name ,max(prime_genre) FROM dados WHERE' 
+            +' prime_genre = "Book" OR prime_genre = "Music"').fetchall()[0]
         
-        resposta = self.cursor.execute('SELECT track_name ,max(prime_genre) FROM dados WHERE  prime_genre = "Book" OR prime_genre = "Music"')
+            return {'app':resposta[0], 'genero':resposta[1]}
         
+        except Exception as e:
+            return {'Erro': f'listar_citacao {e}'}
         
-        print(resposta.fetchall()[0])
 
 
 
