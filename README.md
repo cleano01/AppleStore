@@ -6,7 +6,7 @@
 
       source ven_apple/bin/activate
 
-* Com ambiente ativado, instale as dependências do projeto:  pip install -r requirements.txt
+* Com ambiente ativado, instale as dependências do projeto:  
 
       pip install -r requirements.txt
 
