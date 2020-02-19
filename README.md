@@ -2,6 +2,10 @@
 
 #### Requerimentos
 -----------------
+* Versão do python
+
+      PYTHON >= 3.6.9
+
 * Ative o ambiente quando estiver no diretório do projeto: 
 
       source ven_apple/bin/activate
