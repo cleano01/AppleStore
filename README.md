@@ -33,7 +33,7 @@
   
 #### Executando a API
 -----------------
-No diretório raiz execute o seguinte comando
+* No diretório raiz execute o seguinte comando
 
       python app.py
 
